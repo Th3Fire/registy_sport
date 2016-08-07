@@ -9,9 +9,11 @@
 		header("location:index.php");
 	}else 
 
+	$sql = "SELECT * FROM `users` WHERE `username` = $strUsername AND `password` = $md5_pass AND `status` = \'active\'";
+
 	$strSQL = "SELECT * FROM users WHERE username = '".$strUsername."' 
 	and password = '".$md5_pass."' and status = `active`";
-	$objQuery = mysqli_query($con,$strSQL);
+	$objQuery = mysqli_query($con,$sql);
 	$objResult = mysqli_fetch_array($objQuery);
 	if(!$objResult)
 	{
