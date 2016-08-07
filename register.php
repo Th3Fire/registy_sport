@@ -57,7 +57,7 @@
 				<p><font color="red">&nbsp;&nbsp;ข้อควรระวัง</font></p>
 				<p><font color="red">&nbsp;&nbsp;* รหัสนักศึกษาสามารถสมัครสมาชิกได้เพียงครั้งเดียว<u> เท่านั้น</u></font></p>
 				<p><font color="red">&nbsp;&nbsp;** กรอกข้อให้ถูกต้องและใช้อีเมลที่มีอยู่จริง <u>เท่านั้น</u> เพราะต้องใช้ยืนยันการสมัคร</font></p>
-				<form action="get_data.php" method="POST">
+				<form action="get_data.php" method="POST" name="save" id="save">
 					<table width="100%" border="0px">
 						<th width="30%"></th>
 						<th width="50%"></th>
@@ -257,13 +257,36 @@
 
 				<script>
 
-					$(document).ready(function(){
-						$("#submit").click(function(){
+				var form = document.getElementById('save'); // form has to have ID: <form id="formID">
+				form.noValidate = true;
+				form.addEventListener('submit', function(event) { // listen for form submitting
+					if (!event.target.checkValidity()) {
+				            event.preventDefault(); // dismiss the default functionality
+				            if($('#fname').val() == '' ){
+				            	document.getElementById("fname").focus();
+				            }else if($('#lname').val() == ''){
+				            	document.getElementById("lname").focus();
+				            }else if($('#weight').val() == ''){
+				            	document.getElementById("weight").focus();
+				            }else if($('#height').val() == ''){
+				            	document.getElementById("height").focus();
+				            }else if($('#major').val() == ''){
+				            	document.getElementById("major").focus();
+				            }else if($('#tel').val() == ''){
+				            	document.getElementById("tel").focus();
+				            }else if($('#id_student').val() == ''){
+				            	document.getElementById("id_student").focus();
+				            }else if($('#txt_pass').val() == ''){
+				            	document.getElementById("txt_pass").focus();
+				            }else if($('#txt_email').val() == ''){
+				            	document.getElementById("txt_email").focus();
+				            }else if($('#con_email').val() == ''){
+				            	document.getElementById("con_email").focus();
+				            }
 
-						alert("OK");
-						}
-					}
 
+				        }
+    				}, false);
 						/*function hidModal(){
 							$('#alert').modal('hide');
 						}
@@ -336,17 +359,7 @@
 				email.onchange = validateEmail;
 				con_email.onkeyup = validateEmail;
 
-				function sendData(){
-					$.ajax({
-						url: '../get_data.php',
-						type: 'POST',
-						data: {
-							cmd : 'check', paymeCode : $('#paymeCode').val()  },
-							success: function(data){
-								console.log('data > ' + data );
-							}
-						});
-				}
+				
 
 
 
