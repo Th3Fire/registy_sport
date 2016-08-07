@@ -1,8 +1,4 @@
-body {
-        font: 24px Helvetica;
-        background: #fff;
 
-    }
 
     #main {
         min-height: auto;
@@ -17,7 +13,7 @@ body {
         padding: 5px;
         /*border: 1px solid #cccc33;
         border-radius: 7pt;*/
-        flex: 3 1 90%;
+        flex: 3 1 80%;
         order: 2;
     }
 
@@ -27,7 +23,7 @@ body {
         /*border: 1px solid #8888bb;
         border-radius: 7pt;
         background: #ccccff;*/
-        flex: 1 6 5%;
+        flex: 1 6 20%;
         order: 1;
     }
   
@@ -37,11 +33,22 @@ body {
         /*border: 1px solid #8888bb;
         border-radius: 7pt;
         background: #ccccff;*/
-        flex: 1 6 5%;
+        flex: 1 6 20%;
         order: 3;
     }
  
-    header, footer {
+    header {
+        display: block;
+        margin: 0px;
+        padding: 20px;
+        min-height: 0px;
+        height: 25px;
+        font-size: 30px;
+        /*border: 1px solid #eebb55;
+        border-radius: 7pt;
+        background: #ffeebb;*/
+    }
+    footer {
         display: block;
         margin: 0px;
         padding: 0px;
