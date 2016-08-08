@@ -4,9 +4,9 @@ require_once("connect_db_sport.php");
 
 if(!empty($_POST)){
 	if($_POST['cmd'] == 'logout'){
-		file_put_contents("logout.txt", date("Y-m-d H:i:s") . " - logout passed \n", FILE_APPEND);
+		//file_put_contents("logout.txt", date("Y-m-d H:i:s") . " - logout passed \n", FILE_APPEND);
 		session_destroy();
-		header("Location : http://localhost/sport_server/");
+		
 	}else if($_POST['cmd'] == 'reverv'){
 		$status = $_POST['status'];
 

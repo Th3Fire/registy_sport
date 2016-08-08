@@ -38,7 +38,7 @@
         require_once("connect_db_sport.php");
         if(!isset($_SESSION['Admin']))
         {
-            header ("Location: http://localhost/sport_server/");
+            header ("Location: http://sport.wuttinunt.me");
             exit();
         }
         ?>
