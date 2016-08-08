@@ -19,6 +19,9 @@
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -38,7 +41,7 @@
         require_once("connect_db_sport.php");
         if(!isset($_SESSION['Admin']))
         {
-            header ("Location: http://localhost/sport_server/");
+            header ("Location: http://sport.wuttinunt.me");
             exit();
         }
         ?>

@@ -5,7 +5,9 @@ function logout() {
 		url: "process.php",
 		success: function(data){
 
-			window.location.assign("index.php")
+			//window.location.replace("http://sport.wuttinun.me");
+			//window.location = "http://sport.wuttinun.me";
+			location.reload();
 
 		}
 	});
