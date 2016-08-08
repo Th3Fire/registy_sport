@@ -7,7 +7,7 @@ if(!empty($_POST)){
 		//file_put_contents("log_.txt", date("Y-m-d H:i:s") . " - POST not empty \n", FILE_APPEND);
 
 		$logout = mysqli_real_escape_string($con,$_POST['cmd']);
-		file_put_contents("log_.txt", date("Y-m-d H:i:s") . " - logout : {$logout} \n", FILE_APPEND);
+		//file_put_contents("log_.txt", date("Y-m-d H:i:s") . " - logout : {$logout} \n", FILE_APPEND);
 		if($logout == "logout"){
 			session_destroy();
 			file_put_contents("log_.txt", date("Y-m-d H:i:s") . " - clear session \n", FILE_APPEND);
@@ -21,8 +21,8 @@ if(!empty($_POST)){
 		$md5_pass = md5($password);
 		//file_put_contents("log_.txt", date("Y-m-d H:i:s") . " - username : {$username} password : {$password} md5pass : {$md5_pass} \n", FILE_APPEND);
 
-		echo $username."<br>";
-		echo $password."<br>";
+		//echo $username."<br>";
+		//echo $password."<br>";
 
 		$strSQL  = "SELECT * FROM users WHERE username = '$username' AND password = '$md5_pass' AND status = 'active' ";
 
@@ -35,7 +35,7 @@ if(!empty($_POST)){
 		}
 		else
 		{
-			file_put_contents("log_.txt", date("Y-m-d H:i:s") . " - user login passed \n", FILE_APPEND);
+			//file_put_contents("log_.txt", date("Y-m-d H:i:s") . " - user login passed \n", FILE_APPEND);
 			$_SESSION["User"] = $objResult["username"];
 			session_write_close();
 
@@ -45,11 +45,11 @@ if(!empty($_POST)){
 		$username = mysqli_real_escape_string($con,$_POST['us']);
 		$password = mysqli_real_escape_string($con,$_POST['ps']);
 		//file_put_contents("log_.txt", date("Y-m-d H:i:s") . " - username : {$username} password : {$password} \n", FILE_APPEND);
+		$md5_pass_admin = md5($password);
+		//echo $username."<br>";
+		//echo $password."<br>";
 
-		echo $username."<br>";
-		echo $password."<br>";
-
-		$strSQL  = "SELECT * FROM admin WHERE username = '$username' AND password = '$password' ";
+		$strSQL  = "SELECT * FROM admin WHERE username = '$username' AND password = '$md5_pass_admin' ";
 
 		$objQuery = mysqli_query($con,$strSQL) or die(mysql_error());
 		$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
