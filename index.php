@@ -12,7 +12,9 @@
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
   <link rel="stylesheet" href="css/style.css">
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script type="text/javascript" src="js/myscript.js"></script>
+
 
   <style>
     .loginB {
@@ -56,6 +58,47 @@
       position:relative;
       top:1px;
     }
+    .loginAdmin {
+      -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+      -webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+      box-shadow: 0px 1px 0px 0px #f0f7fa;
+      background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
+      background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+      background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+      background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+      background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+      background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
+      background-color:#33bdef;
+      -moz-border-radius:6px;
+      -webkit-border-radius:6px;
+      border-radius:6px;
+      border:1px solid #057fd0;
+      display:inline-block;
+      width: 100%;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:15px;
+      font-weight:bold;
+      padding:10px 76px;
+      text-decoration:none;
+      text-shadow:0px -1px 0px #5b6178;
+    }
+    .loginAdmin:hover {
+      background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
+      background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+      background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+      background:-o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+      background:-ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+      background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+      background-color:#019ad2;
+    }
+    .loginAdmin:active {
+      position:relative;
+      top:1px;
+    }
 
     .inputA 
     { 
@@ -95,20 +138,21 @@
       <button>create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
-    <form class="login-form">
-      <input class="inputA" type="text" id="username" placeholder="รหัสนักศึกษา" autocomplete="off" />
-      <input class="inputA" type="password" id="password" placeholder="รหัสผ่าน"/>
-      <input class="loginB" id="loginB" type="submit" value="Login" onclick="validate()">
+    <form class="login-form" action="javascript:void(0);" method="POST">
+      <input class="inputA" type="text" id="username" name="username" placeholder="รหัสนักศึกษา" autocomplete="off" />
+      <input class="inputA" type="password" id="password" name="password" placeholder="รหัสผ่าน"/>
+      <input class="loginB" type="submit" id="loginB" onclick="validateUser()" value="Login as user" />
+      <input class="loginAdmin" type="submit" id="loginB" onclick="validateAdmin()" value="Login as admin"/>
       <p class="message">ยังไม่มีบัญชี? <a href="http://sport.wuttinunt.me/register.php">สมัครสมาชิก</a></p>
     </form>
+    
   </div>
   <video id="video" autoplay="autoplay" loop="loop" poster="polina.jpg">
     <source src="http://andytran.me/A%20peaceful%20nature%20timelapse%20video.mp4" type="video/mp4"/>
   </video>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  
 
-  <script src="js/index.js"></script>
-
+  
 
 
 

@@ -10,6 +10,8 @@
 	{
 		echo "DataBase connect Failed: " .mysqli_connect_error();
 		exit();
+	}else {
+		
 	}
 	//***** Auto logout when user AFK
 	//$intRejectTime = 20;
