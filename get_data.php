@@ -3,7 +3,7 @@
 <head>
 	<title>ผลการสมัครสมาชิก</title>
 	<meta charset="utf-8">
-	
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<style>
 		body{
@@ -86,7 +86,7 @@
 				*/
 				if($check_regis == true){
 
-					$sql_user = "INSERT INTO users (username,password,status,_key) VALUES('$student_id','$md5_pass','deactive','$key')";
+					$sql_user = "INSERT INTO users (username,password,status,_key) VALUES('$student_id','$md5_pass','DEACTIVE','$key')";
 
 					$res_add_user = mysqli_query($con,$sql_user);
 
