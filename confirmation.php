@@ -3,7 +3,7 @@
 <head>
 	<title>เปิดใช้งานบัญชี Activate account</title>
 	<meta charset="utf-8">
-	
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<style>
 		body{
@@ -49,7 +49,7 @@
 
 		if($check_active == true){
 
-			$sql = "UPDATE users set status='active' WHERE username='$user' AND _key='$key'";
+			$sql = "UPDATE users set status='ACTIVE' WHERE username='$user' AND _key='$key'";
 
 			if(mysqli_query($con,$sql)){
 				$html = "<br><br><br><br><font size='6'>
